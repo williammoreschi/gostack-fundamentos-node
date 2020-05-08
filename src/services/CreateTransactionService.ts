@@ -15,9 +15,13 @@ class CreateTransactionService {
   }
 
   public execute({ title, value, type }: RequestDTO): Transaction {
+    if (!['income', 'outcome'].includes(type)) {
+      throw Error('The type is not permitted');
+    }
+
     if (type === 'outcome') {
-      const balance = this.transactionsRepository.getBalance();
-      if (value > balance.total) {
+      const { total } = this.transactionsRepository.getBalance();
+      if (value > total) {
         throw Error('The withdrawal amount is greater than the cash balance');
       }
     }
