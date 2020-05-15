@@ -1,4 +1,4 @@
-# gostack-fundamentos-node
+# Desafio 03: Conceitos do ReactJS
 Desafio proposto pela Rocketseat para por em prática o conhecimento em node usando TypeScript 
 
 ### Funcionalidades da aplicação
